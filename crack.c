@@ -3,19 +3,19 @@
 #include <string.h>
 #include "md5.h"
 
-const int PASS_LEN=20;        // Maximum any password will be
-const int HASH_LEN=33;        // Length of MD5 hash strings
-const int DYNAMIC_SIZE=100;
+const int PASS_LEN = 20;        // Maximum any password will be
+const int HASH_LEN = 33;        // Length of MD5 hash strings
+const int DYNAMIC_SIZE = 100;
 
 // Given a hash and a plaintext guess, return 1 if
 // the hash of the guess matches the given hash.
 // That is, return 1 if the guess is correct.
 int tryguess(char *hash, char *guess)
 {
-    int isEqual=0;
+    int isEqual = 0;
     
     // Hash the guess using MD5
-    char* g = md5(guess, strlen(guess));
+    char * g = md5(guess, strlen(guess));
     // Compare the two hashes
     isEqual = (strcmp(g, hash) == 0);
 
@@ -40,6 +40,8 @@ char **read_dictionary(char *filename, int *size) //Ponter to a pointer
         exit(1);
     }
     
+    // How much is the memory going to expnd after it is full
+    // DYNAMIC_SIZE = 100
     int arrlen = DYNAMIC_SIZE;
     
     // Allocate space for a 100 char *
