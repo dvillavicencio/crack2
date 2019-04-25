@@ -51,6 +51,7 @@ char **read_dictionary(char *filename, int *size) //Ponter to a pointer
     // the longest possible length of a string is 'PASS_LEN'
     char buf[PASS_LEN];
     
+    // Counter
     int i = 0;
     while(fgets(buf, PASS_LEN, f) != NULL)
     {
