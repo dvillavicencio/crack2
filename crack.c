@@ -47,7 +47,6 @@ char **read_dictionary(char *filename, int *size) //Ponter to a pointer
     // Allocate space for a 100 char *
     char** lines = (char **)malloc(arrlen * sizeof(char *));
     
-    // Chunk of memory that's unnecesarily big, in this case
     // the longest possible length of a string is 'PASS_LEN'
     char buf[PASS_LEN];
     
